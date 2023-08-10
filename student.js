@@ -9,7 +9,7 @@ function loadData() {
 
 function showOption() {
   console.log("1. show students");
-  console.log("2. create student");
+  console.log("2. create a student");
   console.log("3. save & exit");
   console.log("4. delete student");
   console.log("5. edit student");
@@ -46,7 +46,6 @@ function showStudents() {
     console.log(student.name, student.age);
   }
 }
-3;
 
 function addStudents() {
   const name = readlineSync.question("name: ");
@@ -59,6 +58,7 @@ function saveAndExit() {
   const addData = JSON.stringify(students);
   fs.writeFileSync("./data.json", addData, { encoding: "utf-8" });
 }
+
 function editStudent() {
   const editStudent = readlineSync.question("nameEdit: ");
   const updateStudent = students.find((item) => item.name === editStudent);
@@ -78,7 +78,6 @@ function deleteStudent() {
 function run() {
   loadData();
   showOption();
-
   saveAndExit();
 }
 run();
